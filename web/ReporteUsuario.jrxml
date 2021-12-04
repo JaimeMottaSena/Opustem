@@ -1,0 +1,188 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0ff82108-0168-414a-ae8c-b2cac43239ab">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     usuario.`AliasUsuario` AS usuario_AliasUsuario,
+     usuario.`NombreUsuario` AS usuario_NombreUsuario,
+     usuario.`ApellidoUsuario` AS usuario_ApellidoUsuario,
+     usuario.`CorreoUsuario` AS usuario_CorreoUsuario,
+     usuario.`TipoDocumento` AS usuario_TipoDocumento,
+     usuario.`NumeroDocumento` AS usuario_NumeroDocumento,
+     usuario.`DireccionUsuario` AS usuario_DireccionUsuario,
+     usuario.`Telefono` AS usuario_Telefono,
+     usuario.`Estado` AS usuario_Estado
+FROM
+     `usuario` usuario]]>
+	</queryString>
+	<field name="usuario_AliasUsuario" class="java.lang.String"/>
+	<field name="usuario_NombreUsuario" class="java.lang.String"/>
+	<field name="usuario_ApellidoUsuario" class="java.lang.String"/>
+	<field name="usuario_CorreoUsuario" class="java.lang.String"/>
+	<field name="usuario_TipoDocumento" class="java.lang.String"/>
+	<field name="usuario_NumeroDocumento" class="java.lang.Integer"/>
+	<field name="usuario_DireccionUsuario" class="java.lang.String"/>
+	<field name="usuario_Telefono" class="java.lang.Integer"/>
+	<field name="usuario_Estado" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="c503165d-7cc8-4cd2-96bc-41013e3bdd69"/>
+				<imageExpression><![CDATA["leaf_banner_gray.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="31c8e04d-7313-4f33-a9ea-63611be6aaa4"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[   Opus Tem ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="117" y="46" width="157" height="22" uuid="d80871de-4ab3-42dd-a453-a2fd984a61ee"/>
+				<text><![CDATA[Empleados]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="ebf9ce3f-b1fe-417e-b71a-36463740289e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="61" height="15" uuid="483acb71-10bc-4196-ae3c-0fa746ad6270"/>
+				<text><![CDATA[Alias]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="61" y="19" width="61" height="15" uuid="38479915-6190-499d-8167-26b081f18b11"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="122" y="19" width="61" height="15" uuid="ce25e38d-55d2-4c18-8e69-58bae92b30ed"/>
+				<text><![CDATA[Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="183" y="19" width="61" height="15" uuid="adc06243-01ad-4d2d-ae22-98e759399855"/>
+				<text><![CDATA[Correo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="244" y="19" width="73" height="15" uuid="a3214a45-9811-49de-8369-36477efbe7b9"/>
+				<text><![CDATA[Documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="317" y="19" width="61" height="15" uuid="5123d2f3-5e8d-4e29-a269-79c14fd93c18"/>
+				<text><![CDATA[NumDoc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="372" y="19" width="61" height="15" uuid="b3cfb67b-8b0e-4790-afc7-e36091f9171b"/>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="433" y="19" width="61" height="15" uuid="9087a2e7-eb7c-4808-b8f3-10485ec4468f"/>
+				<text><![CDATA[Telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="494" y="20" width="61" height="15" uuid="be279ec0-cb30-407f-8b21-59419c31d102"/>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="22a6634f-a951-459f-b9a5-670cdc176b34"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="61" height="15" uuid="d56add4e-01dc-4220-b75b-5bf5ca0748b8"/>
+				<textFieldExpression><![CDATA[$F{usuario_AliasUsuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="61" y="0" width="61" height="15" uuid="238f05a4-1f6c-4a4f-92fc-74daa9a17500"/>
+				<textFieldExpression><![CDATA[$F{usuario_NombreUsuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="122" y="0" width="61" height="15" uuid="eebcecb7-d7d1-4196-b663-a37e746ce511"/>
+				<textFieldExpression><![CDATA[$F{usuario_ApellidoUsuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="183" y="0" width="61" height="15" uuid="becc04b7-d68b-4cbe-bf76-651587a2a5b1"/>
+				<textFieldExpression><![CDATA[$F{usuario_CorreoUsuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="244" y="0" width="61" height="15" uuid="eed990c9-269d-491c-ab25-c02d1db595cf"/>
+				<textFieldExpression><![CDATA[$F{usuario_TipoDocumento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="433" y="0" width="61" height="15" uuid="5ac63fbe-615d-4085-812c-c75664324312"/>
+				<textFieldExpression><![CDATA[$F{usuario_Telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="494" y="0" width="61" height="15" uuid="df59a09c-657a-4235-a407-55b8fb1a126c"/>
+				<textFieldExpression><![CDATA[$F{usuario_Estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="378" y="0" width="61" height="15" uuid="d0c3b428-27e3-48eb-8970-facef97a1e67"/>
+				<textFieldExpression><![CDATA[$F{usuario_DireccionUsuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="311" y="0" width="61" height="15" uuid="2441dbc0-9c2d-49d1-97e1-7258019d2022"/>
+				<textFieldExpression><![CDATA[$F{usuario_NumeroDocumento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="b70f892b-7bda-41d3-8dc3-2466b8495f49"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="145ef871-14ed-496b-8d3f-57d96bcfa15d"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="f3fa89f0-e9bf-4096-9e52-6d8206711545"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="4494b808-8f4c-4a13-837e-7b789c84387f"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

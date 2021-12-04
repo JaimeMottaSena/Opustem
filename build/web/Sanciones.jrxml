@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="107a3d6e-3028-40c6-bc8e-64d53639bf38">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     sancion.`IdSancion` AS sancion_IdSancion,
+     sancion.`IdEventoFK` AS sancion_IdEventoFK,
+     sancion.`FechaSancion` AS sancion_FechaSancion,
+     sancion.`Descripcion` AS sancion_Descripcion,
+     tiposancion.`NombreSancion` AS tiposancion_NombreSancion,
+     usuario.`NombreUsuario` AS usuario_NombreUsuario,
+     usuario.`ApellidoUsuario` AS usuario_ApellidoUsuario,
+     usuario.`AliasUsuario` AS usuario_AliasUsuario
+FROM
+     `tiposancion` tiposancion INNER JOIN `sancion` sancion ON tiposancion.`IdTipoSancion` = sancion.`IdTipoSancionFK`
+     INNER JOIN `usuario` usuario ON sancion.`IdUsuarioFK` = usuario.`IdUsuario`]]>
+	</queryString>
+	<field name="sancion_IdSancion" class="java.lang.Integer"/>
+	<field name="sancion_IdEventoFK" class="java.lang.Integer"/>
+	<field name="sancion_FechaSancion" class="java.sql.Timestamp"/>
+	<field name="sancion_Descripcion" class="java.lang.String"/>
+	<field name="tiposancion_NombreSancion" class="java.lang.String"/>
+	<field name="usuario_NombreUsuario" class="java.lang.String"/>
+	<field name="usuario_ApellidoUsuario" class="java.lang.String"/>
+	<field name="usuario_AliasUsuario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="270" y="0" width="263" height="62" uuid="0e3f3e89-bf64-4805-bbf6-294ee25ff2b1"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Sanciones]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="303" y="62" width="196" height="22" uuid="f0f10f5e-605e-4f81-939a-42c58eed2c0b"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Opustem]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="c5ae415e-5039-4b02-ac7f-5662334950bf"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="100" height="15" forecolor="#736343" uuid="f7700f60-93ca-49ff-8efa-45151c9c5302"/>
+				<text><![CDATA[IdSancion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="100" y="0" width="100" height="15" forecolor="#736343" uuid="a3d4c00c-4b1b-4b6e-bb9b-5888036b7b6e"/>
+				<text><![CDATA[IdEvento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="165" y="0" width="100" height="15" forecolor="#736343" uuid="adc44c59-5ebd-49bf-8800-d9bec2f95ee1"/>
+				<text><![CDATA[FechaSancion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="300" y="0" width="100" height="15" forecolor="#736343" uuid="c7b0b743-d24d-4c29-8632-3e049e588b86"/>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="400" y="0" width="100" height="15" forecolor="#736343" uuid="1a953fc8-c6c6-4bd2-af47-0dd1b93267cb"/>
+				<text><![CDATA[Tipo de Sancion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="500" y="0" width="100" height="15" forecolor="#736343" uuid="5ace6672-fd46-403e-b514-b0a7a7c5a553"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="600" y="0" width="100" height="15" forecolor="#736343" uuid="693f1c79-4e34-45f0-a0a8-66d228ffc735"/>
+				<text><![CDATA[Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="700" y="0" width="100" height="15" forecolor="#736343" uuid="a39135b4-9159-4968-8bf0-6f3faa0d3b6b"/>
+				<text><![CDATA[Alias Usuario]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="b067c2ee-5c1a-4025-a5c6-25332e6ca31e"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="100" height="15" uuid="cff4e739-4ae9-47e7-8af1-e74502afef05"/>
+					<textFieldExpression><![CDATA[$F{sancion_IdSancion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="100" y="0" width="100" height="15" uuid="6f05ccbb-0d56-4cdc-aff9-84b43192c823"/>
+					<textFieldExpression><![CDATA[$F{sancion_IdEventoFK}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="165" y="0" width="135" height="15" uuid="d28a9990-c8f0-46f8-8678-6eb5c67b1e40"/>
+					<textFieldExpression><![CDATA[$F{sancion_FechaSancion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="300" y="0" width="100" height="15" uuid="9749c08c-102f-4d71-a206-163f16271ab1"/>
+					<textFieldExpression><![CDATA[$F{sancion_Descripcion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="400" y="0" width="100" height="15" uuid="7e4f7aa8-4f27-44e7-aa31-21039dd9b814"/>
+					<textFieldExpression><![CDATA[$F{tiposancion_NombreSancion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="500" y="0" width="100" height="15" uuid="356c4c2d-1af5-41c7-8999-e7c538eb3a7c"/>
+					<textFieldExpression><![CDATA[$F{usuario_NombreUsuario}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="600" y="0" width="100" height="15" uuid="0767b7fa-5117-436e-9cbc-3a50823db278"/>
+					<textFieldExpression><![CDATA[$F{usuario_ApellidoUsuario}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="700" y="0" width="100" height="15" uuid="2e2b7079-0dd4-42de-8dee-e01a14e836aa"/>
+					<textFieldExpression><![CDATA[$F{usuario_AliasUsuario}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="5479f717-a564-42a6-9f96-bfdaf1dc56be"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="087b8185-5a9a-4489-a32b-dd7154bb87b4"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="f0913d38-df6f-490f-9ffd-bb239b2999a1"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="191278cd-56c7-4e3f-9887-5c380608d438"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="114a8f18-d7d0-4230-a2be-3ff97e7d57ef"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

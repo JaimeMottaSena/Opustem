@@ -1,0 +1,21 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26/10/2021, 03:11:50 PM
+    Author     : JUAN DAVID PACHON
+*/
+
+.adf{
+    border:greenyellow solid 2px;
+   with: 100px;
+   background: greenyellow;
+}
+.adf.verde{
+    border: blanchedalmond solid 2px;
+    width: 100px;
+    background: red;
+   
+}
